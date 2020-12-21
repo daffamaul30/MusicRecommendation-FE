@@ -38,7 +38,7 @@ const Home = () => {
             placeholder="Please insert your name..."
           />
         </Form.Group>
-        <Link onClick={onOkClick} to="/musicrecommendation">
+        <Link onClick={onOkClick} to={name ? '/musicrecommendation' : '/'}>
           <Button
             style={{ position: 'absolute', right: '0', marginRight: '20px' }}
             variant="primary"

@@ -15,7 +15,7 @@ import { logo } from '../../assets';
 
 const MusicRecommendation = () => {
   const [loading, setLoading] = useState(false);
-  const [title, setTitle] = useState();
+  const [title, setTitle] = useState('');
   const [data, setData] = useState();
   const [error, setError] = useState();
   const nama = localStorage.getItem('name');
@@ -27,27 +27,33 @@ const MusicRecommendation = () => {
   };
 
   const onRecommendClick = () => {
-    setLoading(true);
-    recommendation
-      .getRecommend(Capitalize(title))
-      .then((res) => {
-        if (res === 'Music not in Database') {
-          setError(
-            'Sorry, the song is not in our Database :( or you entered the wrong title'
-          );
+    if (title.length > 0) {
+      setLoading(true);
+      recommendation
+        .getRecommend(Capitalize(title))
+        .then((res) => {
+          if (res === 'Music not in Database') {
+            setError(
+              'Sorry, the song is not in our Database :( or you entered the wrong title'
+            );
+            setData();
+            setTitle('');
+          } else if (res !== 'Music not in Database') {
+            setData(res);
+          }
+        })
+        .catch((err) => {
+          setError(err.message);
+          setTitle('');
           setData();
-          setTitle();
-        } else if (res !== 'Music not in Database') {
-          setData(res);
-        }
-      })
-      .catch((err) => {
-        setError(err.message);
-        setTitle();
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    } else if (title.length === 0) {
+      setError("You haven't filled in the song title");
+      setData();
+    }
   };
 
   const hideError = () => {
