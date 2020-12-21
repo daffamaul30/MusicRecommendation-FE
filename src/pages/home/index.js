@@ -43,7 +43,6 @@ const Home = () => {
             style={{ position: 'absolute', right: '0', marginRight: '20px' }}
             variant="primary"
             type="button"
-            // onClick={onOkClick}
           >
             Ok
           </Button>
