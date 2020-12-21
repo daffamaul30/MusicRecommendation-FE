@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Form, Button } from 'react-bootstrap';
 import { setCookie } from '../../utils/cookie';
 
@@ -8,7 +9,7 @@ const Home = () => {
   const onOkClick = () => {
     const cookieToken = name;
     setCookie('name', JSON.stringify(cookieToken), 1);
-    window.location.replace('/musicrecommendation');
+    // window.location.replace('/musicrecommendation');
   };
 
   return (
@@ -40,14 +41,16 @@ const Home = () => {
             placeholder="Please insert your name..."
           />
         </Form.Group>
-        <Button
-          style={{ position: 'absolute', right: '0', marginRight: '20px' }}
-          variant="primary"
-          type="button"
-          onClick={onOkClick}
-        >
-          Ok
-        </Button>
+        <Link to="/musicrecommendation">
+          <Button
+            style={{ position: 'absolute', right: '0', marginRight: '20px' }}
+            variant="primary"
+            type="button"
+            onClick={onOkClick}
+          >
+            Ok
+          </Button>
+        </Link>
       </Form>
     </Container>
   );
