@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Form } from 'react-bootstrap';
+import { Container, Form, Button } from 'react-bootstrap';
 
 const Home = () => {
   const [name, setName] = useState();
@@ -39,14 +39,14 @@ const Home = () => {
           />
         </Form.Group>
         <Link onClick={onOkClick} to="/musicrecommendation">
-          <p
+          <Button
             style={{ position: 'absolute', right: '0', marginRight: '20px' }}
-            // variant="primary"
-            // type="button"
+            variant="primary"
+            type="button"
             // onClick={onOkClick}
           >
             Ok
-          </p>
+          </Button>
         </Link>
       </Form>
     </Container>
