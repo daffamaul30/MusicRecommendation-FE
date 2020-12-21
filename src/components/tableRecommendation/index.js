@@ -20,7 +20,9 @@ const TableRecommendation = ({ data }) => {
           <th>Genre</th>
         </tr>
       </thead>
-      <tbody style={{ color: 'white' }}>{listMusic}</tbody>
+      <tbody style={{ color: 'white', fontWeight: 'lighter' }}>
+        {listMusic}
+      </tbody>
     </Table>
   );
 };
