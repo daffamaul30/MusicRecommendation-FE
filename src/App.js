@@ -1,45 +1,45 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import './App.css';
-import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import routes from './config/routes';
-import { isUserAuthenticated } from './utils/cookie';
+// import { isUserAuthenticated } from './utils/cookie';
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={() => {
-        if (isUserAuthenticated()) {
-          return <Component />;
-        }
-        return <Redirect to="/login" />;
-      }}
-    />
-  );
-};
+// const PrivateRoute = ({ component: Component, ...rest }) => {
+//   return (
+//     <Route
+//       {...rest}
+//       render={() => {
+//         if (isUserAuthenticated()) {
+//           return <Component />;
+//         }
+//         return <Redirect to="/login" />;
+//       }}
+//     />
+//   );
+// };
 
 const App = () => {
   return (
     <BrowserRouter>
       <Switch>
         {routes.map((route) => {
-          if (route.isPublic) {
-            return (
-              <Route
-                path={route.path}
-                component={route.component}
-                key={route.path}
-              />
-            );
-          }
+          // if (route.isPublic) {
           return (
-            <PrivateRoute
+            <Route
               path={route.path}
               component={route.component}
               key={route.path}
             />
           );
+          // }
+          // return (
+          //   <PrivateRoute
+          //     path={route.path}
+          //     component={route.component}
+          //     key={route.path}
+          //   />
+          // );
         })}
       </Switch>
     </BrowserRouter>
