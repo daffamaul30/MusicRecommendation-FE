@@ -36,6 +36,7 @@ const MusicRecommendation = () => {
           setError(
             'Sorry, the song is not in our Database :( or you entered the wrong title'
           );
+          setData();
           setTitle();
         } else if (res !== 'Music not in Database') {
           setData(res);
@@ -103,7 +104,7 @@ const MusicRecommendation = () => {
       <Container
         style={{
           paddingTop: '10px',
-          marginTop: '100px',
+          marginTop: '70px',
           marginBottom: '50px',
           width: '900px',
           // maxHeight: '500px',
