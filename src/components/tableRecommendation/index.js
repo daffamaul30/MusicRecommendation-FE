@@ -2,9 +2,9 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 
 const TableRecommendation = ({ data }) => {
-  const listMusic = data.map((e) => {
+  const listMusic = data.map((e, index) => {
     return (
-      <tr key={e.title}>
+      <tr key={(e.title, index)}>
         <td>{e.title}</td>
         <td>{e.artist}</td>
         <td>{e.genres}</td>

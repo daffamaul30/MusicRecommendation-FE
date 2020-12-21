@@ -11,7 +11,7 @@ import {
 } from 'react-bootstrap';
 import { getCookie } from '../../utils/cookie';
 import { recommendation } from '../../services';
-import { Loading, TableRecommendation } from '../../components';
+import { TableRecommendation } from '../../components';
 import { logo } from '../../assets';
 
 const MusicRecommendation = () => {
@@ -58,7 +58,7 @@ const MusicRecommendation = () => {
   return (
     <div>
       <Navbar
-        stiky
+        sticky
         style={{
           paddingRight: '30px',
           paddingLeft: '20px',
@@ -170,7 +170,7 @@ const MusicRecommendation = () => {
           </>
         )}
       </Container>
-      {loading && <Loading />}
+      {loading && <p>Loading...</p>}
     </div>
   );
 };
