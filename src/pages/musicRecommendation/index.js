@@ -27,7 +27,7 @@ const MusicRecommendation = () => {
     });
   };
 
-  const onRecommendClick = () => {
+  const handleRecommendClick = () => {
     if (title.length > 0) {
       setLoading(true);
       recommendation
@@ -120,7 +120,7 @@ const MusicRecommendation = () => {
         {nama && (
           <Form
             onSubmit={(e) => {
-              onRecommendClick();
+              handleRecommendClick();
               e.preventDefault();
             }}
             style={{ maxWidth: '600px' }}
@@ -168,7 +168,8 @@ const MusicRecommendation = () => {
                   }}
                   type="button"
                   className="mb-2"
-                  onClick={onRecommendClick}
+                  onClick={handleRecommendClick}
+                  disabled={loading}
                 >
                   Recommend me
                 </Button>

@@ -6,7 +6,7 @@ const Home = () => {
   const [name, setName] = useState('');
   const [error, setError] = useState();
 
-  const onOkClick = () => {
+  const handleOkClick = () => {
     if (name.length > 0) {
       localStorage.setItem('name', name);
     } else if (name.length === 0) {
@@ -62,8 +62,7 @@ const Home = () => {
             />
           </Form.Group>
           <Link
-            onKeyPress={onOkClick}
-            onClick={onOkClick}
+            onClick={handleOkClick}
             to={name ? '/musicrecommendation' : '/'}
           >
             <Button
