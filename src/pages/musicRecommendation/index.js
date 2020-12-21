@@ -20,7 +20,6 @@ const MusicRecommendation = () => {
   const [data, setData] = useState();
   const [error, setError] = useState();
   const name = JSON.parse(getCookie('name'));
-  console.log(name);
 
   const Capitalize = (str) => {
     return str.replace(/\w\S*/g, (txt) => {
@@ -40,7 +39,6 @@ const MusicRecommendation = () => {
           setData();
           setTitle();
         } else if (res !== 'Music not in Database') {
-          console.log(res);
           setData(res);
         }
       })
