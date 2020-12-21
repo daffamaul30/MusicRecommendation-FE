@@ -20,14 +20,14 @@ const Loading = () => {
         // backgroundColor: 'unset',
       }}
     >
-      {/* <lottie-player
+      <lottie-player
         src="https://assets1.lottiefiles.com/packages/lf20_ZI1FDI.json"
         background="transparent"
         speed="1"
         style={{ width: '400px', height: '400px' }}
         loop
         autoplay
-      /> */}
+      />
       <p
         className="text-center"
         style={{ marginTop: '-70px', color: 'white', fontSize: '20px' }}

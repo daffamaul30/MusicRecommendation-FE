@@ -11,7 +11,7 @@ import {
 } from 'react-bootstrap';
 import { getCookie } from '../../utils/cookie';
 import { recommendation } from '../../services';
-import { TableRecommendation } from '../../components';
+import { Loading, TableRecommendation } from '../../components';
 import { logo } from '../../assets';
 
 const MusicRecommendation = () => {
@@ -104,7 +104,7 @@ const MusicRecommendation = () => {
       <Container
         style={{
           paddingTop: '10px',
-          marginTop: '70px',
+          marginTop: '55px',
           marginBottom: '50px',
           width: '900px',
           // maxHeight: '500px',
@@ -170,7 +170,7 @@ const MusicRecommendation = () => {
           </>
         )}
       </Container>
-      {loading && <p>Loading...</p>}
+      {loading && <Loading />}
     </div>
   );
 };
