@@ -57,6 +57,7 @@ const MusicRecommendation = () => {
   return (
     <div>
       <Navbar
+        stiky
         style={{
           paddingRight: '30px',
           paddingLeft: '20px',
@@ -102,60 +103,62 @@ const MusicRecommendation = () => {
       <Container
         style={{
           paddingTop: '10px',
-          marginTop: '50px',
+          marginTop: '100px',
           marginBottom: '50px',
           width: '900px',
           // maxHeight: '500px',
           // backgroundColor: 'red',
         }}
       >
-        <Form>
-          <Form.Row className="align-items-center">
-            <Col xs="auto">
-              <Form.Label htmlFor="inlineFormInputGroup" srOnly>
-                Username
-              </Form.Label>
-              <InputGroup className="mb-2">
-                <FormControl
-                  style={{
-                    borderTopRightRadius: '0',
-                    borderBottomRightRadius: '0',
-                    borderTopLeftRadius: '5px',
-                    borderBottomLeftRadius: '5px',
-                    width: '400px',
-                  }}
-                  id="inlineFormInputGroup"
-                  placeholder="What song do you like to hear?"
-                  required
-                  onChange={(e) => {
-                    setTitle(e.target.value);
-                  }}
-                />
-              </InputGroup>
-            </Col>
-            <Col
-              xs="auto"
-              style={{
-                marginLeft: '-10px',
-              }}
-            >
-              <Button
+        {name && (
+          <Form>
+            <Form.Row className="align-items-center">
+              <Col xs="auto">
+                <Form.Label htmlFor="inlineFormInputGroup" srOnly>
+                  Username
+                </Form.Label>
+                <InputGroup className="mb-2">
+                  <FormControl
+                    style={{
+                      borderTopRightRadius: '0',
+                      borderBottomRightRadius: '0',
+                      borderTopLeftRadius: '5px',
+                      borderBottomLeftRadius: '5px',
+                      width: '400px',
+                    }}
+                    id="inlineFormInputGroup"
+                    placeholder="What song do you like to hear?"
+                    required
+                    onChange={(e) => {
+                      setTitle(e.target.value);
+                    }}
+                  />
+                </InputGroup>
+              </Col>
+              <Col
+                xs="auto"
                 style={{
-                  borderTopLeftRadius: '0',
-                  borderBottomLeftRadius: '0',
-                  borderTopRightRadius: '5px',
-                  borderBottomRightRadius: '5px',
-                  backgroundColor: 'rgb(59, 79, 119, 0.8)',
+                  marginLeft: '-10px',
                 }}
-                type="button"
-                className="mb-2"
-                onClick={onRecommendClick}
               >
-                Recommend me
-              </Button>
-            </Col>
-          </Form.Row>
-        </Form>
+                <Button
+                  style={{
+                    borderTopLeftRadius: '0',
+                    borderBottomLeftRadius: '0',
+                    borderTopRightRadius: '5px',
+                    borderBottomRightRadius: '5px',
+                    backgroundColor: 'rgb(59, 79, 119, 0.8)',
+                  }}
+                  type="button"
+                  className="mb-2"
+                  onClick={onRecommendClick}
+                >
+                  Recommend me
+                </Button>
+              </Col>
+            </Form.Row>
+          </Form>
+        )}
         {data && (
           <>
             <div style={{ fontWeight: 'bold', color: 'white', margin: '20px' }}>

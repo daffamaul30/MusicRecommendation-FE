@@ -4,12 +4,12 @@ const routes = [
   {
     path: '/musicrecommendation',
     component: MusicRecommendation,
-    isPublic: true,
+    // isPublic: true,
   },
   {
     path: '/',
     component: Home,
-    isPublic: true,
+    // isPublic: true,
   },
 ];
 
