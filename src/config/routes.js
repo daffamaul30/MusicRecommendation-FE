@@ -1,11 +1,16 @@
-// import { Home } from '../pages';
+import { Home, MusicRecommendation } from '../pages';
 
 const routes = [
-  // {
-  //   path: '/',
-  //   component: Home,
-  //   isPublic: true,
-  // },
+  {
+    path: '/musicrecommendation',
+    component: MusicRecommendation,
+    isPublic: true,
+  },
+  {
+    path: '/',
+    component: Home,
+    isPublic: true,
+  },
 ];
 
 export default routes;
