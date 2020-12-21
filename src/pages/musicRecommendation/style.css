@@ -1,0 +1,6 @@
+@media only screen and (max-width: 500px) {
+  /* For tablets: */
+  #inlineFormInputGroup {
+    width: 200px !important;
+  }
+}

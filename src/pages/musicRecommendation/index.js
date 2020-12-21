@@ -12,6 +12,7 @@ import {
 import { recommendation } from '../../services';
 import { Loading, TableRecommendation } from '../../components';
 import { logo } from '../../assets';
+import './style.css';
 
 const MusicRecommendation = () => {
   const [loading, setLoading] = useState(false);
@@ -111,13 +112,19 @@ const MusicRecommendation = () => {
           paddingTop: '10px',
           marginTop: '55px',
           marginBottom: '50px',
-          width: '900px',
+          maxWidth: '900px',
           // maxHeight: '500px',
           // backgroundColor: 'red',
         }}
       >
         {nama && (
-          <Form>
+          <Form
+            onSubmit={(e) => {
+              onRecommendClick();
+              e.preventDefault();
+            }}
+            style={{ maxWidth: '600px' }}
+          >
             <Form.Row className="align-items-center">
               <Col xs="auto">
                 <Form.Label htmlFor="inlineFormInputGroup" srOnly>
@@ -138,6 +145,10 @@ const MusicRecommendation = () => {
                     onChange={(e) => {
                       setTitle(e.target.value);
                     }}
+                    // onKeyPress={(e) => {
+                    //   // onRecommendClick();
+                    //   e.preventDefault();
+                    // }}
                   />
                 </InputGroup>
               </Col>

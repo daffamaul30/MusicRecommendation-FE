@@ -45,7 +45,13 @@ const Home = () => {
         }}
       >
         <h2>Welcome</h2>
-        <Form style={{ marginTop: '20px' }}>
+        <Form
+          onSubmit={(e) => {
+            e.preventDefault();
+            setError('Click "Ok" button');
+          }}
+          style={{ marginTop: '20px' }}
+        >
           <Form.Group>
             <Form.Control
               onChange={(e) => {
@@ -55,7 +61,11 @@ const Home = () => {
               placeholder="Please insert your name..."
             />
           </Form.Group>
-          <Link onClick={onOkClick} to={name ? '/musicrecommendation' : '/'}>
+          <Link
+            onKeyPress={onOkClick}
+            onClick={onOkClick}
+            to={name ? '/musicrecommendation' : '/'}
+          >
             <Button
               style={{ position: 'absolute', right: '0', marginRight: '20px' }}
               variant="primary"
