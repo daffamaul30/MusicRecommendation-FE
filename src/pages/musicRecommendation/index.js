@@ -9,7 +9,7 @@ import {
   InputGroup,
   Alert,
 } from 'react-bootstrap';
-import { getCookie } from '../../utils/cookie';
+// import { getCookie } from '../../utils/cookie';
 import { recommendation } from '../../services';
 import { Loading, TableRecommendation } from '../../components';
 import { logo } from '../../assets';
@@ -19,7 +19,8 @@ const MusicRecommendation = () => {
   const [title, setTitle] = useState();
   const [data, setData] = useState();
   const [error, setError] = useState();
-  const { nama } = JSON.parse(getCookie('name'));
+  // const { nama } = JSON.parse(getCookie('name'));
+  const nama = 'Daffa';
 
   const Capitalize = (str) => {
     return str.replace(/\w\S*/g, (txt) => {

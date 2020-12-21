@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Form, Button } from 'react-bootstrap';
-import { setCookie } from '../../utils/cookie';
+import { Container, Form } from 'react-bootstrap';
+// import { setCookie } from '../../utils/cookie';
 
 const Home = () => {
   const [name, setName] = useState();
+  // const name = 'Daffa';
 
-  const onOkClick = () => {
-    // console.log();
-    const data = {
-      nama: name,
-    };
-    setCookie('name', JSON.stringify(data), 1000);
-    // window.location.replace('/musicrecommendation');
-  };
+  // const onOkClick = () => {
+  // console.log();
+  // const data = {
+  //   nama: name,
+  // };
+  // setCookie('name', JSON.stringify(data), 1000);
+  // window.location.replace('/musicrecommendation');
+  // };
 
   return (
     <Container
@@ -33,8 +34,8 @@ const Home = () => {
         color: 'white',
       }}
     >
-      <h2>Welcome</h2>
-      <Form onSubmit={onOkClick} style={{ marginTop: '20px' }}>
+      <h2>{`Welcome ${name}`}</h2>
+      <Form style={{ marginTop: '20px' }}>
         <Form.Group>
           <Form.Control
             onChange={(e) => {
@@ -45,14 +46,14 @@ const Home = () => {
           />
         </Form.Group>
         <Link to="/musicrecommendation">
-          <Button
+          <p
             style={{ position: 'absolute', right: '0', marginRight: '20px' }}
-            variant="primary"
-            type="button"
-            onClick={onOkClick}
+            // variant="primary"
+            // type="button"
+            // onClick={onOkClick}
           >
             Ok
-          </Button>
+          </p>
         </Link>
       </Form>
     </Container>
