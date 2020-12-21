@@ -1,20 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Form } from 'react-bootstrap';
-// import { setCookie } from '../../utils/cookie';
 
 const Home = () => {
   const [name, setName] = useState();
-  // const name = 'Daffa';
 
-  // const onOkClick = () => {
-  // console.log();
-  // const data = {
-  //   nama: name,
-  // };
-  // setCookie('name', JSON.stringify(data), 1000);
-  // window.location.replace('/musicrecommendation');
-  // };
+  const onOkClick = () => {
+    localStorage.setItem('name', name);
+  };
 
   return (
     <Container
@@ -34,7 +27,7 @@ const Home = () => {
         color: 'white',
       }}
     >
-      <h2>{`Welcome ${name}`}</h2>
+      <h2>Welcome</h2>
       <Form style={{ marginTop: '20px' }}>
         <Form.Group>
           <Form.Control
@@ -45,7 +38,7 @@ const Home = () => {
             placeholder="Please insert your name..."
           />
         </Form.Group>
-        <Link to="/musicrecommendation">
+        <Link onClick={onOkClick} to="/musicrecommendation">
           <p
             style={{ position: 'absolute', right: '0', marginRight: '20px' }}
             // variant="primary"
