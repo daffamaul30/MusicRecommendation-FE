@@ -7,8 +7,11 @@ const Home = () => {
   const [name, setName] = useState();
 
   const onOkClick = () => {
-    const cookieToken = name;
-    setCookie('name', JSON.stringify(cookieToken), 1);
+    // console.log();
+    const data = {
+      nama: name,
+    };
+    setCookie('name', JSON.stringify(data), 1000);
     // window.location.replace('/musicrecommendation');
   };
 

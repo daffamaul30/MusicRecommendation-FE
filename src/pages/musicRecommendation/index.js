@@ -19,7 +19,7 @@ const MusicRecommendation = () => {
   const [title, setTitle] = useState();
   const [data, setData] = useState();
   const [error, setError] = useState();
-  const name = JSON.parse(getCookie('name'));
+  const { nama } = JSON.parse(getCookie('name'));
 
   const Capitalize = (str) => {
     return str.replace(/\w\S*/g, (txt) => {
@@ -90,7 +90,7 @@ const MusicRecommendation = () => {
               fontFamily: 'Poiret One, cursive',
             }}
           >
-            {`Hi ${name}`}
+            {`Hi ${nama}`}
           </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>
@@ -111,7 +111,7 @@ const MusicRecommendation = () => {
           // backgroundColor: 'red',
         }}
       >
-        {name && (
+        {nama && (
           <Form>
             <Form.Row className="align-items-center">
               <Col xs="auto">
