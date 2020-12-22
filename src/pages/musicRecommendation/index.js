@@ -28,7 +28,7 @@ const MusicRecommendation = () => {
   };
 
   const handleRecommendClick = () => {
-    if (title.includes(' ')) {
+    if ('          '.includes(title)) {
       setData();
       setTitle('');
       setError("Music title can't empty");
