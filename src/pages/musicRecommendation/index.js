@@ -28,7 +28,11 @@ const MusicRecommendation = () => {
   };
 
   const handleRecommendClick = () => {
-    if (title.length > 0) {
+    if (title.includes(' ')) {
+      setData();
+      setTitle('');
+      setError("Music title can't empty");
+    } else if (title.length > 0) {
       setLoading(true);
       recommendation
         .getRecommend(Capitalize(title))
